@@ -1,32 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { motion } from 'framer-motion'
-import Nav from '../components/nav'
 
 const Header = ({ siteTitle }) => (
-  <header className="py-8 md:py-16">
+  <header className="w.full bg-black">
     
-    <div className="container">
-      <div className="flex flex-wrap items-center mb-4">
-        <motion.button
-          className="w-5 h-5 mr-3 block bg-black rounded"
-          animate={{ rotate: 180 }}
-          transition={{
-            loop: Infinity,
-            duration: 2,
-            ease: "anticipate"
-          }}
-        />
-
-        <Link className="font-bold block text-lg md:text-xl inline-block" to="/">
-          {siteTitle}
-        </Link>
+    <div className="relative h-64 flex items-center">
+      <div className="block w-2/5 text-white flex items-center justify-end"><p>LOGO</p></div>
+      <div className="block w-3/5">
+        <h1 className="text-5xl p-5 uppercase tracking-widest bg-white text-black m-0 max-w-xl">{siteTitle}</h1>
+        <p className="text-left p-5 text-white bg-gray-700 w-full">WEB DESIGNER <br /> // FRONT-END DEVELOPER <span>NOTTINGHAM</span></p>
       </div>
-
-      <Nav />
-
     </div>
+
+    <div className="bg-yellow-500 h-12"></div>
+
   </header>
 )
 

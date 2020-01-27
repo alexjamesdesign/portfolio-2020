@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { motion } from 'framer-motion'
 
+
 const duration = 0.35
 
 const container = {
@@ -24,7 +25,9 @@ const item = {
 const IndexPage = () => {
   return (
     <>
+      
       <SEO title="Home" />
+
       <motion.section
         variants={container}
         initial="hidden" 
