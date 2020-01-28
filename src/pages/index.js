@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
+import Hero from "../components/hero"
 import { motion } from 'framer-motion'
 
 
@@ -22,7 +23,7 @@ const item = {
   },
 }
 
-const IndexPage = () => {
+const IndexPage = ({data: { page }}) => {
   return (
     <>
       
@@ -39,7 +40,8 @@ const IndexPage = () => {
           variants={item}
           transition="easeInOut"
         >
-          <p className="text-lg md:text-xl pl-3 border-l-2 border-black">An opinionated starter for Gatsby v2 with TailwindCSS, PostCSS and Framer Motion page transitions.</p>
+          {JSON.stringify(page)}
+          <Hero heading={page.heroTitle} />
         </motion.div>
 
         <motion.div 
@@ -67,3 +69,13 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexPageQuery {
+    page: datoCmsHome {
+      title
+      slug
+      heroTitle
+    }
+  }
+`

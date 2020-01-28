@@ -1,3 +1,5 @@
+require("dotenv").config({ path: `.env` })
+
 module.exports = {
   siteMetadata: {
     title: `Alex James`,
@@ -34,6 +36,14 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        // You can find your read-only API token under the Settings > API tokens
+        // section of your administrative area:
+        apiToken: `${process.env.DATOAPIKEY}`,
       },
     },
   ],
