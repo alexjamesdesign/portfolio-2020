@@ -6,6 +6,9 @@ module.exports = {
           'DIN'
         ],
       },
+      container: {
+        center: true,
+      },
       screens: {
         'tablet': '640px',
         // => @media (min-width: 640px) { ... }
@@ -36,6 +39,6 @@ module.exports = {
     })
   ],
   corePlugins: {
-    container: false
+    container: false,
   }
 }

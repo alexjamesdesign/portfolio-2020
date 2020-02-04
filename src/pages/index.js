@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
+import Skill from "../components/skill"
 import { motion } from 'framer-motion'
 
 
@@ -29,9 +30,23 @@ const IndexPage = ({data: { page }}) => {
       
       <SEO title="Home" />
 
+      {JSON.stringify(page)}
+
       <motion.section variants={container} initial="hidden"  animate="visible" className="hero-container" >
         <motion.div className="content" variants={item} transition="easeInOut" >
           <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} />
+        </motion.div>
+      </motion.section>
+
+      <motion.section variants={container} animate="visible" className="container">
+        <motion.div className="content" variants={item} transition="easeInOut" >
+          <Skill image={page.skillOneImage.fluid} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
+        </motion.div>
+      </motion.section>
+
+      <motion.section variants={container} animate="visible" className="container">
+        <motion.div className="content" variants={item} transition="easeInOut" >
+          <Skill image={page.skillTwoImage.fluid} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
         </motion.div>
       </motion.section>
 
@@ -61,6 +76,26 @@ export const query = graphql`
       slug
       heroTitle
       subHeroTitle
+      skillOneImage {
+        alt
+        url
+        title
+        fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      skillOneTitle
+      skillOneContent
+      skillTwoImage {
+        alt
+        url
+        title
+        fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsSizes
+        }
+      }
+      skillTwoTitle
+      skillTwoContent
     }
   }
 `
