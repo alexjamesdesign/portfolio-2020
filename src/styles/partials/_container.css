@@ -5,3 +5,7 @@
 
     max-width: theme('screens.lg');
 }
+
+.hero-logo {
+    max-height: 220px;
+}
