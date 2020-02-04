@@ -29,12 +29,13 @@ const IndexPage = ({data: { page }}) => {
       
       <SEO title="Home" />
 
-      <motion.section variants={container} initial="hidden"  animate="visible" className="container" >
+      <motion.section variants={container} initial="hidden"  animate="visible" className="hero-container" >
         <motion.div className="content" variants={item} transition="easeInOut" >
-          {JSON.stringify(page)}
-          <Hero heading={page.heroTitle} />
+          <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} />
         </motion.div>
+      </motion.section>
 
+      <motion.section variants={container} initial="hidden"  animate="visible" className="container" >
         <motion.div className="content" variants={item} transition="easeInOut" >
           <hr className="block my-8" />
         </motion.div>
@@ -59,6 +60,7 @@ export const query = graphql`
       title
       slug
       heroTitle
+      subHeroTitle
     }
   }
 `
