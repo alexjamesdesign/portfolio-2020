@@ -38,13 +38,13 @@ const IndexPage = ({data: { page }}) => {
 
       <motion.section variants={container} animate="visible" className="container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillOneImage.fluid} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
+          <Skill image={page.skillOneImage.fluid} icon={page.skillOneIcon.url} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
         </motion.div>
       </motion.section>
 
       <motion.section variants={container} animate="visible" className="container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillTwoImage.fluid} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
+          <Skill image={page.skillTwoImage.fluid} icon={page.skillTwoIcon.url} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
         </motion.div>
       </motion.section>
 
@@ -66,7 +66,7 @@ const IndexPage = ({data: { page }}) => {
 }
 
 export default IndexPage
-
+ 
 export const query = graphql`
   query IndexPageQuery {
     page: datoCmsHome {
@@ -78,21 +78,33 @@ export const query = graphql`
         alt
         url
         title
-        fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        width
+        height
+        fluid(imgixParams: { fm: "jpg", auto: "compress", h: "400" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       skillOneTitle
+      skillOneIcon {
+        url
+        
+      }
       skillOneContent
       skillTwoImage {
         alt
         url
         title
-        fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        width
+        height
+        fluid(imgixParams: { fm: "jpg", auto: "compress", h: "400" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       skillTwoTitle
+      skillTwoIcon {
+        url
+        
+      }
       skillTwoContent
     }
   }
