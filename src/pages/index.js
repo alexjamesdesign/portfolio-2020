@@ -30,8 +30,6 @@ const IndexPage = ({data: { page }}) => {
       
       <SEO title="Home" />
 
-      {JSON.stringify(page)}
-
       <motion.section variants={container} initial="hidden"  animate="visible" className="hero-container" >
         <motion.div className="content" variants={item} transition="easeInOut" >
           <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} />
