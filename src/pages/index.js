@@ -38,13 +38,13 @@ const IndexPage = ({data: { page }}) => {
 
       <motion.section variants={container} animate="visible" className="container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillOneImage.fluid} icon={page.skillOneIcon.url} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
+          <Skill image={page.skillOneImage} icon={page.skillOneIcon.url} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
         </motion.div>
       </motion.section>
 
       <motion.section variants={container} animate="visible" className="container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillTwoImage.fluid} icon={page.skillTwoIcon.url} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
+          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon.url} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
         </motion.div>
       </motion.section>
 
@@ -96,7 +96,7 @@ export const query = graphql`
         title
         width
         height
-        fluid(imgixParams: { fm: "jpg", auto: "compress", h: "400" }) {
+        fluid(imgixParams: {fm: "jpg", auto: "compress", h: "400", fit: "crop", crop: "center"}) {
           ...GatsbyDatoCmsFluid
         }
       }

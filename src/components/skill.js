@@ -4,10 +4,11 @@ import Img from "gatsby-image"
 
 
 const Skill = ({ title, content, image, order, icon }) => (
+  
 
       <div className={`flex items-center w-full flex-wrap tablet:flex-no-wrap ${order}`}>
         <div className="w-full tablet:w-1/3">
-            <Img fluid={image} className="border-white border-8 w-full" />
+            <Img fluid={image.fluid} className="border-white border-8 w-full" alt={image.alt} key={image.title} />
         </div>
         <div className="w-full tablet:w-2/3 z-10">
           <div className="w-full flex items-center -ml-20">
