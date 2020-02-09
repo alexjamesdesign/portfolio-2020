@@ -16,9 +16,3 @@
 /* Tailwind Utils */
 @import 'tailwindcss/utilities';
 
-
-.skill-container:nth-of-type(odd) .hero-order-odd {
-    justify-content: flex-start;
-    flex-flow: row-reverse;
-    margin-left: 5rem;
-}

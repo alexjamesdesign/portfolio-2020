@@ -38,13 +38,13 @@ const IndexPage = ({data: { page }}) => {
 
       <motion.section variants={container} animate="visible" className="container skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" contentPadding="pl-16" />
+          <Skill image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" contentPadding="tablet:pl-16" />
         </motion.div>
       </motion.section>
 
       <motion.section variants={container} animate="visible" className="container skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" contentPadding="pr-16" />
+          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" contentPadding="tablet:pr-16" />
         </motion.div>
       </motion.section>
 

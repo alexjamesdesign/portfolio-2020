@@ -13,3 +13,16 @@
 .hero-logo {
     max-height: 220px;
 }
+
+
+.skill-container:nth-of-type(odd) .skill-order-odd {
+    @screen tablet {
+        justify-content: flex-start;
+        flex-flow: row-reverse;
+        margin-left: 5rem;
+    }
+}
+
+.skill-container:nth-of-type(even) {
+    @apply -mt-16;
+}
