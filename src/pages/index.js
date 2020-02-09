@@ -36,15 +36,15 @@ const IndexPage = ({data: { page }}) => {
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container">
+      <motion.section variants={container} animate="visible" className="container skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillOneImage} icon={page.skillOneIcon.url} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
+          <Skill image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" contentPadding="pl-16" />
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container">
+      <motion.section variants={container} animate="visible" className="container skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon.url} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse"/>
+          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" contentPadding="pr-16" />
         </motion.div>
       </motion.section>
 
@@ -80,14 +80,15 @@ export const query = graphql`
         title
         width
         height
-        fluid(imgixParams: { fm: "jpg", auto: "compress", h: "400" }) {
-          ...GatsbyDatoCmsFluid
+        fluid(imgixParams: {h: "300", w: "210", fit: "crop", crop: "center" }) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       skillOneTitle
       skillOneIcon {
         url
-        
+        alt
+        title
       }
       skillOneContent
       skillTwoImage {
@@ -96,14 +97,14 @@ export const query = graphql`
         title
         width
         height
-        fluid(imgixParams: {fm: "jpg", auto: "compress", h: "400", fit: "crop", crop: "center"}) {
-          ...GatsbyDatoCmsFluid
+        fluid(imgixParams: {h: "300", w: "210", fit: "crop", crop: "bottom" }) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
+
       }
       skillTwoTitle
       skillTwoIcon {
         url
-        
       }
       skillTwoContent
     }
