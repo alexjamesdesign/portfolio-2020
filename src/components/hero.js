@@ -21,7 +21,7 @@ const Hero = ({ heading, subHeading }) => (
         <motion.div transition="easeInOut" variants={heroText} initial="hidden" transition={{ duration: 0.5 }}>
           <h1 className="text-3xl tablet:text-5xl p-5 mx-3 tablet:mx-0 uppercase tracking-widest bg-white text-black m-0 max-w-xl">{heading}</h1>
         </motion.div>
-        <p className="text-left ml-3 tablet:ml-0 p-5 text-white bg-gray-700 w-full" dangerouslySetInnerHTML={{ __html: subHeading }}></p>
+        <p className="text-left ml-3 tablet:ml-0 p-5 text-white bg-gray-700 w-full" dangerouslySetInnerHTML={{ __html: subHeading }}></p> 
       </div>
     </div>
 
