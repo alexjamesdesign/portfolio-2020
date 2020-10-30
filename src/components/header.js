@@ -6,7 +6,7 @@ import Nav from '../components/nav'
 const Header = ({ siteTitle }) => (
   <header className="w.full bg-black">
     
-    <Nav />
+    
 
   </header>
 )

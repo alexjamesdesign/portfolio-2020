@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Skill from "../components/skill"
+import Bio from "../components/bio"
 import { motion } from 'framer-motion'
 
 
@@ -47,6 +48,12 @@ const IndexPage = ({data: { page }}) => {
           <Skill image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" contentPadding="tablet:pr-16" />
         </motion.div>
       </motion.section>
+
+      {/* <motion.section variants={container} animate="visible" className="bio-container">
+        <motion.div className="content" variants={item} transition="easeInOut" >
+          <Bio title={page.bioTitle} content={page.bioContent} />
+        </motion.div>
+      </motion.section> */}
 
     </>
   )
@@ -94,6 +101,8 @@ export const query = graphql`
         url
       }
       skillTwoContent
+      bioTitle
+      bioContent
     }
   }
 `
