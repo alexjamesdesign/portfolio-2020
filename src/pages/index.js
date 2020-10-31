@@ -5,7 +5,6 @@ import Skill from "../components/skill"
 import Bio from "../components/bio"
 import { motion } from 'framer-motion'
 
-
 const duration = 0.35
 
 const container = {
