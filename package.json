@@ -25,13 +25,12 @@
   },
   "devDependencies": {
     "gatsby-plugin-purgecss": "^5.0.0",
-    "postcss-import": "^13.0.0",
+    "postcss-import": "^12.0.1",
     "postcss-import-resolver": "^2.0.0",
-    "postcss-nested": "^5.0.1",
+    "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.1.2",
-    "tailwindcss": "^1.9.6",
-    "tailwindcss-transition": "^1.0.5"
+    "prettier": "^1.19.1",
+    "tailwindcss": "^1.9.0"
   },
   "keywords": [
     "gatsby",
