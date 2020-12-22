@@ -21,11 +21,11 @@ const Skill = ({ title, content, image, order, icon, contentPadding }) => (
   )
   
   Skill.propTypes = {
-    image: PropTypes.string,
+    image: PropTypes.object,
   }
   
   Skill.defaultProps = {
-    image: ``,
+    image: {},
   }
   
   export default Skill

@@ -17,7 +17,7 @@ const Bio = ({ title, content, image }) => (
           <div className="w-full tablet:w-2/3">
 
             <h1 className="uppercase">{title}</h1>
-            <div className="text-white" dangerouslySetInnerHtml={{ __html: content }} />
+            <div className="text-white" dangerouslySetInnerHTML={{ __html: content }} />
             
           </div>
 
