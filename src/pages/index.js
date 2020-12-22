@@ -48,11 +48,11 @@ const IndexPage = ({data: { page }}) => {
         </motion.div>
       </motion.section>
 
-      {/* <motion.section variants={container} animate="visible" className="bio-container">
+      <motion.section variants={container} animate="visible" className="bio-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Bio title={page.bioTitle} content={page.bioContent} />
+          <Bio title={page.bioTitle} content={page.bioContent} image={page.displayPicture} />
         </motion.div>
-      </motion.section> */}
+      </motion.section>
 
     </>
   )
@@ -93,7 +93,16 @@ export const query = graphql`
         fluid(imgixParams: {h: "300", w: "210", fit: "crop", crop: "bottom" }) {
           ...GatsbyDatoCmsFluid_noBase64
         }
-
+      }
+      displayPicture {
+        alt
+        url
+        title
+        width
+        height
+        fluid(imgixParams: {h: "400", w: "300", fit: "crop", crop: "center" }) {
+          ...GatsbyDatoCmsFluid_noBase64
+        }
       }
       skillTwoTitle
       skillTwoIcon {

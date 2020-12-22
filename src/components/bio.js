@@ -3,15 +3,23 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
 
-const Bio = ({ title, content }) => (
+const Bio = ({ title, content, image }) => (
   
 
-    <div className="w.full bg-black clear mt-32">
+    <div className="w.full bg-black clear mt-32 text-white">
         
-        <div className="container">
-            <span className="uppercase text-white text-black tracking-widest font-bold text-3xl mb-0 pl-2 py-5 block w-full tablet:w-auto text-center tablet:text-left">{title}</span>
-        
-            <span className="text-white">{ content }</span>
+        <div className="container tablet:flex">
+
+          <div className="w-full tablet:w-1/3">
+            <Img fluid={image.fluid} className="border-white border-8 w-full" alt={image.alt} key={image.title} />
+          </div> 
+
+          <div className="w-full tablet:w-2/3">
+
+            <h1 className="uppercase">{title}</h1>
+            <div className="text-white" dangerouslySetInnerHtml={{ __html: content }} />
+            
+          </div>
 
         </div> 
         
