@@ -30,7 +30,8 @@
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.19.1",
-    "tailwindcss": "^1.9.0"
+    "tailwindcss": "^1.9.0",
+    "tailwindcss-pseudo-elements": "^1.5.1"
   },
   "keywords": [
     "gatsby",

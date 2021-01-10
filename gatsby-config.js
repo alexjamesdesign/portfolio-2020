@@ -16,6 +16,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    `tailwindcss-pseudo-elements`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

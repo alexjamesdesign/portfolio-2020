@@ -36,7 +36,7 @@ const IndexPage = ({data: { page }}) => {
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container skill-container">
+      <motion.section variants={container} animate="visible" className="container skill-container tablet:-mt-16">
         <motion.div className="content" variants={item} transition="easeInOut" >
           <Skill image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" contentPadding="tablet:pl-16" />
         </motion.div>

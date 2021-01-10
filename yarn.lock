@@ -14103,6 +14103,11 @@
     "slice-ansi" "^2.1.0"
     "string-width" "^3.0.0"
 
+"tailwindcss-pseudo-elements@^1.5.1":
+  "integrity" "sha512-B7ABn5MeXWH1aXYSXui+MenSjv8bCd2PVIJEXue/sVKGuPYo3FKfpKzkcNXUUe/wgFTLbpVArlU0rCD6rZYkPg=="
+  "resolved" "https://registry.npmjs.org/tailwindcss-pseudo-elements/-/tailwindcss-pseudo-elements-1.5.1.tgz"
+  "version" "1.5.1"
+
 "tailwindcss-transitions@^2.2.0":
   "integrity" "sha512-yI8nzJL8EOXdXECQDVDFBQ89yNhqYuAzltwgHEjU+0R5TZAfIfA4DEtvdVbBMmvAgYOGMhm0D/7zPfc7Wl3MSg=="
   "resolved" "https://registry.npmjs.org/tailwindcss-transitions/-/tailwindcss-transitions-2.2.0.tgz"
@@ -14110,7 +14115,7 @@
   dependencies:
     "lodash" "^4.17.15"
 
-"tailwindcss@^1.9.0":
+"tailwindcss@^1.9.0", "tailwindcss@>=0.7.4":
   "integrity" "sha512-nY8WYM/RLPqGsPEGEV2z63riyQPcHYZUJpAwdyBzVpxQHOHqHE+F/fvbCeXhdF1+TA5l72vSkZrtYCB9hRcwkQ=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-1.9.6.tgz"
   "version" "1.9.6"

@@ -4,4 +4,31 @@ Components
 
 .timeline-bar {
     background: linear-gradient(180deg, rgba(236,201,75,1) 0%, rgba(236,138,75,1) 100%);
+    z-index: 100;
+}
+
+.bio-content {
+    @apply block;
+}
+
+.bio-content h2 span {
+    @apply block;
+    @apply text-yellow-500;
+    @apply text-3xl;
+    @apply tracking-widest;
+    @apply font-bold;
+    @apply relative;
+}
+
+.bio-content h2 span:before {
+    content: " ";
+    @apply absolute;
+    @apply w-1;
+    border-radius: 0 10px 10px 0;
+    width: 35px;
+    height: 15px;
+    left: -18.5%;
+    top: 49%;
+    background: rgba(236,201,75,1);
+    z-index: 50;
 }
