@@ -39,5 +39,13 @@ module.exports = {
         apiToken: `${process.env.DATOAPIKEY}`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        },
+      },
+    },
   ],
 }

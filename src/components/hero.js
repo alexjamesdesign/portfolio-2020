@@ -10,22 +10,22 @@ const heroText = {
     y: 0,
     opacity: 1,
   },
-}
+} 
 
 const Hero = ({ heading, subHeading }) => (
-  <div className="w.full bg-black">
+  <div className="w.full bg-bleu">
     
-    <div className="relative h-auto tablet:pt-40 flex flex-wrap tablet:flex-no-wrap items-center tablet:items-start justify-end">
-      <div className="block w-full tablet:w-2/5 text-white flex items-center justify-center tablet:justify-end pb-8 px-12 tablet:px-0 py-16 tablet:py-0 max-w-herologo mx-auto tablet:ml-3 tablet:mx-0"><SvgLogo /></div>
-      <div className="block w-full tablet:w-3/5 overflow-hidden">
+    <div className="relative flex flex-wrap items-center justify-end h-auto tablet:pt-40 tablet:flex-no-wrap tablet:items-start">
+      <div className="flex items-center justify-center block w-full px-12 py-16 pb-8 mx-auto text-white tablet:w-2/5 tablet:justify-end tablet:px-0 tablet:py-0 max-w-herologo tablet:ml-3 tablet:mx-0"><SvgLogo /></div>
+      <div className="block w-full overflow-hidden tablet:w-3/5">
         <motion.div transition="easeInOut" variants={heroText} initial="hidden" transition={{ duration: 0.5 }}>
-          <h1 className="text-3xl tablet:text-5xl p-5 mx-3 tablet:mx-0 uppercase tracking-widest bg-white text-black m-0 max-w-xl">{heading}</h1>
+          <h1 className="max-w-xl p-5 m-0 mx-3 text-3xl tracking-widest uppercase bg-white text-bleu tablet:text-5xl tablet:mx-0">{heading}</h1>
         </motion.div>
-        <p className="text-left ml-3 tablet:ml-0 p-5 text-white bg-gray-700 w-full" dangerouslySetInnerHTML={{ __html: subHeading }}></p>   
+        <p className="w-full p-5 ml-3 text-left text-white bg-bleu tablet:ml-0" dangerouslySetInnerHTML={{ __html: subHeading }}></p>   
       </div>
     </div>
 
-    <div className="bg-yellow-500 h-48 tablet:h-64 -mt-24 tablet:-mt-32"></div>
+    <div className="h-48 -mt-24 bg-yello tablet:h-64 tablet:-mt-32"></div>
 
   </div>
 )

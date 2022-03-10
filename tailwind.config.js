@@ -7,9 +7,16 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        'black': '#000',
+        'grey': '#616674',
+        'white': '#FFF',
+        'bleu': '#03152D',
+        'yello': '#FFD748',
+      },
       fontFamily: {
-        mono: [
-          'DIN'
+        sans: [
+          'Inter'
         ],
       },
       container: {

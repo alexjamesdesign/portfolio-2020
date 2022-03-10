@@ -5,9 +5,10 @@ import Skill from "../components/skill"
 import Bio from "../components/bio"
 import { motion } from 'framer-motion'
 
+
 const duration = 0.35
 
-const container = {
+const container = { 
   visible: {
     transition: {
       when: 'beforeChildren',
@@ -20,11 +21,11 @@ const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
-    opacity: 1,
+    opacity: 1, 
   },
 }
 
-const IndexPage = ({data: { page }}) => {
+const IndexPage = ({data: { page, svgs, bio }}) => {
   return (
     <>
       
@@ -36,21 +37,27 @@ const IndexPage = ({data: { page }}) => {
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container skill-container tablet:-mt-16">
+      <motion.section variants={container} animate="visible" className="container pt-10 skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" contentPadding="tablet:pl-16" />
+          <Skill itemNumber='one' image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container skill-container">
+      <motion.section variants={container} animate="visible" className="container pb-10 skill-container">
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Skill image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" contentPadding="tablet:pr-16" />
+          <Skill itemNumber='two' image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" />
         </motion.div>
       </motion.section>
 
       <motion.section variants={container} animate="visible" className="bio-container">
-        <motion.div className="content" variants={item} transition="easeInOut" >
-          <Bio title={page.bioTitle} content={page.bioContent} image={page.displayPicture} />
+        <motion.div className="flex flex-no-wrap overflow-x-auto content" variants={item} transition="easeInOut" >
+
+          {page.bio.map(block => (
+            <div key={block.id} className="w-6/12 pt-16 text-white bg-black">
+              {block.model.apiKey === 'bio_item' && <Bio year={block.year} location={block.location} content={block.content} />}
+            </div>
+          ))}
+ 
         </motion.div>
       </motion.section>
 
@@ -109,8 +116,16 @@ export const query = graphql`
         url
       }
       skillTwoContent
-      bioTitle
-      bioContent
+      bio {
+        ... on DatoCmsBioItem {
+          model {
+            apiKey
+          }
+          year
+          location
+          content
+        }
+      }
     }
   }
 `

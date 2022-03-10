@@ -1,34 +1,28 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
 
 
-const Bio = ({ title, content, image }) => (
-  
+const Bio = ({ year, location, content }) => (
 
-    <div className="w.full bg-black clear tablet:-mt-16 text-white">
-        
-        <div className="container py-8 tablet:py-24 tablet:flex">
+      <div className="relative pt-16">
 
-          <div className="w-full tablet:w-1/6">
-            <span className="timeline-bar h-full block w-12 bg-red-800 rounded-3xl"></span>
-          </div> 
+          <span className="absolute top-0 left-auto block w-6 h-12 bg-red-800 timeline-bar rounded-3xl"></span>
+          
+          <div className="w-full tablet:w-5/6 bio-content before:empty-content">
 
-          <div className="w-full tablet:w-5/6 tablet:pl-8 bio-content before:empty-content">
-
-            <h1 className="uppercase">{title}</h1>
+            <p className="p-0 mb-1 uppercase h1">{year}</p>
+            <p className="mb-3 h2">{location}</p>
             <div className="text-white" dangerouslySetInnerHTML={{ __html: content }} />
             
           </div>
+          
+      </div>
 
-        </div> 
-        
-    </div>
-    
   )
   
   Bio.propTypes = {
-    title: PropTypes.string,
+    year: PropTypes.string,
+    location: PropTypes.string,
     content: PropTypes.string,
   }
   
