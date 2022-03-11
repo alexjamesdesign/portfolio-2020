@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 
 const Bio = ({ year, location, content }) => (
 
-      <div className="relative pt-16">
+      <div className="relative pt-16 pr-8 text-white card">
 
-          <span className="absolute top-0 left-auto block w-6 h-12 bg-red-800 timeline-bar rounded-3xl"></span>
+          <span className="absolute top-0 w-2 h-12 bg-yello"></span>
           
           <div className="w-full tablet:w-5/6 bio-content before:empty-content">
 

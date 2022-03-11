@@ -2,11 +2,6 @@
 Components
 -------------------------- */
 
-.timeline-bar {
-    background: linear-gradient(180deg, rgba(236,201,75,1) 0%, rgba(236,138,75,1) 100%);
-    z-index: 100;
-}
-
 .bio-content {
     @apply block;
 }
@@ -31,4 +26,15 @@ Components
     top: 49%;
     background: rgba(236,201,75,1);
     z-index: 50;
+}
+
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 600px;
 }

@@ -4,6 +4,10 @@ import Hero from "../components/hero"
 import Skill from "../components/skill"
 import Bio from "../components/bio"
 import { motion } from 'framer-motion'
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import BackgroundImage from 'gatsby-background-image'
+
+
 
 
 const duration = 0.35
@@ -33,7 +37,7 @@ const IndexPage = ({data: { page, svgs, bio }}) => {
 
       <motion.section variants={container} initial="hidden"  animate="visible" className="hero-container" >
         <motion.div className="content" variants={item} transition="easeInOut" >
-          <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} />
+          <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} /> 
         </motion.div>
       </motion.section>
 
@@ -48,12 +52,15 @@ const IndexPage = ({data: { page, svgs, bio }}) => {
           <Skill itemNumber='two' image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" />
         </motion.div>
       </motion.section>
+    
+      <motion.section variants={container} animate="visible" className="relative w-full py-16 bg-bleu bio-container">
+        
+        <span className="absolute left-0 z-10 w-full h-2 bg-yello top-4"></span>
 
-      <motion.section variants={container} animate="visible" className="bio-container">
-        <motion.div className="flex flex-no-wrap overflow-x-auto content" variants={item} transition="easeInOut" >
+        <motion.div className="pl-32 scrolling-wrapper-flexbox" variants={item} transition="easeInOut" >
 
           {page.bio.map(block => (
-            <div key={block.id} className="w-6/12 pt-16 text-white bg-black">
+            <div key={block.id}>
               {block.model.apiKey === 'bio_item' && <Bio year={block.year} location={block.location} content={block.content} />}
             </div>
           ))}
@@ -98,6 +105,16 @@ export const query = graphql`
         width
         height
         fluid(imgixParams: {h: "300", w: "210", fit: "crop", crop: "bottom" }) {
+          ...GatsbyDatoCmsFluid_noBase64
+        }
+      }
+      backgroundImagePattern {
+        alt
+        url
+        title
+        width
+        height
+        fluid(imgixParams: {h: "1000", w: "1000", fit: "crop", crop: "bottom" }) {
           ...GatsbyDatoCmsFluid_noBase64
         }
       }
