@@ -6,6 +6,9 @@ module.exports = {
     }
   },
   theme: {
+    fontFamily: {
+      sans: [ 'Inter' ]
+    },
     extend: {
       colors: {
         'black': '#000',
@@ -15,9 +18,7 @@ module.exports = {
         'yello': '#FFD748',
       },
       fontFamily: {
-        sans: [
-          'Inter'
-        ],
+        sans: [ 'Inter' ]
       },
       container: {
         center: true,
