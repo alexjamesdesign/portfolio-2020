@@ -7,9 +7,6 @@ import { motion } from 'framer-motion'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import BackgroundImage from 'gatsby-background-image'
 
-
-
-
 const duration = 0.35
 
 const container = { 
