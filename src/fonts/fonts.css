@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../../public/fonts/Inter-Light.ttf') format('ttf');
+  src: url('Inter-Light.ttf') format('ttf');
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../../public/fonts/Inter-Regular.ttf') format('ttf');
+  src: url('Inter-Regular.ttf') format('ttf');
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../../public/fonts/Inter-Bold.ttf') format('ttf');
+  src: url('Inter-Bold.ttf') format('ttf');
   font-display: swap;
   font-weight: 700;
   font-style: normal;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../../public/fonts/Inter-Black.ttf') format('ttf');
+  src: url('Inter-Black.ttf') format('ttf');
   font-display: swap;
   font-weight: 900;
   font-style: normal;

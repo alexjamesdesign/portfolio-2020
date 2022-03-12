@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import Header from "./header"
 import "../styles/main.css"
+import "../fonts/fonts.css"
 
 const duration = 0.35
 
