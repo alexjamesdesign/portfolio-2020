@@ -36,5 +36,25 @@ Components
 
 .card {
     flex: 0 0 auto;
-    width: 600px;
+}
+
+.embla {
+    overflow: hidden;
+}
+.embla__container {
+    display: flex;
+}
+.embla__slide {
+    position: relative;
+    /* transform: translate(-50%, -0%); */
+    flex: 0 0 100%;
+    margin-left: 20px;
+    
+    @screen md {
+        flex: 0 0 50%;
+    }
+    
+    @screen lg {
+        flex: 0 0 31%;
+    }
 }

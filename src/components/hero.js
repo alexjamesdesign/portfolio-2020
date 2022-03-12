@@ -18,7 +18,7 @@ const Hero = ({ heading, subHeading }) => (
     <div className="relative flex flex-wrap items-center justify-end h-auto tablet:pt-40 tablet:flex-no-wrap tablet:items-start">
       <div className="flex items-center justify-center block w-full px-12 py-16 pb-8 mx-auto text-white tablet:w-2/5 tablet:justify-end tablet:px-0 tablet:py-0 max-w-herologo tablet:ml-3 tablet:mx-0"><SvgLogo /></div>
       <div className="block w-full overflow-hidden tablet:w-3/5">
-        <motion.div transition="easeInOut" variants={heroText} initial="hidden" transition={{ duration: 0.5 }}>
+        <motion.div>
           <h1 className="max-w-xl p-5 m-0 mx-3 text-3xl tracking-widest uppercase bg-white text-bleu tablet:text-5xl tablet:mx-0">{heading}</h1>
         </motion.div>
         <p className="w-full p-5 ml-3 text-left text-white bg-bleu tablet:ml-0" dangerouslySetInnerHTML={{ __html: subHeading }}></p>   

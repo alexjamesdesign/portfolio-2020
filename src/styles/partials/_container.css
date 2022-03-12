@@ -1,7 +1,7 @@
 .container {
     @apply mx-auto;
-    @apply px-2;
     @apply py-2;
+    @apply px-5;
 
     @screen tablet {
         @apply px-8;

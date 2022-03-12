@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react";
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Skill from "../components/skill"
@@ -6,6 +6,8 @@ import Bio from "../components/bio"
 import { motion } from 'framer-motion'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import BackgroundImage from 'gatsby-background-image'
+import useEmblaCarousel from 'embla-carousel-react'
+
 
 const duration = 0.35
 
@@ -27,43 +29,58 @@ const item = {
 }
 
 const IndexPage = ({data: { page, svgs }}) => {
+
+  const [viewportRef, embla] = useEmblaCarousel({
+    inViewThreshold: 0.65,
+    loop: true,
+    align: "start",
+  }); 
+
+  useEffect(() => {
+      if (!embla) return;
+  }, [embla]);
+  
   return (
     <>
       
       <SEO title="Home" />
 
-      <motion.section variants={container} initial="hidden"  animate="visible" className="hero-container" >
-        <motion.div className="content" variants={item} transition="easeInOut" >
+      <motion.section variants={container} className="pb-10 hero-container" >
+        <motion.div className="content" variants={item} >
           <Hero heading={page.heroTitle} subHeading={page.subHeroTitle} /> 
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container pt-10 skill-container">
+      <motion.section variants={container} animate="visible" className="container pb-10">
         <motion.div className="content" variants={item} transition="easeInOut" >
           <Skill itemNumber='one' image={page.skillOneImage} icon={page.skillOneIcon} title={page.skillOneTitle} content={page.skillOneContent} order="flex-row" />
         </motion.div>
       </motion.section>
 
-      <motion.section variants={container} animate="visible" className="container pb-10 skill-container">
+      <motion.section variants={container} animate="visible" className="container pb-12">
         <motion.div className="content" variants={item} transition="easeInOut" >
           <Skill itemNumber='two' image={page.skillTwoImage} icon={page.skillTwoIcon} title={page.skillTwoTitle} content={page.skillTwoContent} order="flex-row-reverse" />
         </motion.div>
       </motion.section>
     
-      <motion.section variants={container} animate="visible" className="relative w-full py-16 bg-bleu bio-container">
+      <section variants={container} animate="visible" className="relative w-full py-16 mb-10 bg-bleu embla">
         
         <span className="absolute left-0 z-10 w-full h-2 bg-yello top-4"></span>
 
-        <motion.div className="pl-32 scrolling-wrapper-flexbox" variants={item} transition="easeInOut" >
+        <div className="w-full pl-5 overflow-x-auto lg:pl-32 xl:pl-48 embla__viewport" ref={viewportRef}>
+          
+          <div className="embla__container md:ml-6 md:mb-6">
 
-          {page.bio.map(block => (
-            <div key={block.id}>
-              {block.model.apiKey === 'bio_item' && <Bio year={block.year} location={block.location} content={block.content} />}
-            </div>
-          ))}
+            {page.bio.map(block => (
+              <div key={block.id}>
+                {block.model.apiKey === 'bio_item' && <Bio year={block.year} location={block.location} content={block.content} />}
+              </div>
+            ))}
+
+          </div>
  
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
     </>
   )
