@@ -29,7 +29,7 @@ const item = {
   },
 }
 
-const IndexPage = ({data: { page, svgs, bio }}) => {
+const IndexPage = ({data: { page, svgs }}) => {
   return (
     <>
       
