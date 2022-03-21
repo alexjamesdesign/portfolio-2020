@@ -72,7 +72,7 @@ const IndexPage = ({data: { page, svgs }}) => {
           <div className="embla__container md:ml-6 md:mb-6">
 
             {page.bio.map(block => (
-              <div key={block.id}>
+              <div className="relative" key={block.id}>
                 {block.model.apiKey === 'bio_item' && <Bio year={block.year} location={block.location} content={block.content} />}
               </div>
             ))}
