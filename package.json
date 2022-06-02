@@ -20,7 +20,7 @@
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-transformer-sharp": "^2.5.20",
     "locomotive-scroll": "^4.1.4",
-    "npm": "^8.5.4",
+    "npm": "^8.11.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
